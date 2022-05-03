@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class CurrencyExchange {
 
 	private Long id;
-	private String froms;
+	private String from;
 	private String to;
 	private BigDecimal conversionMultiple;
 	private String environment;
@@ -17,7 +17,7 @@ public class CurrencyExchange {
 	public CurrencyExchange(Long id, String froms, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
-		this.froms = froms;
+		this.from = froms;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
 	}
@@ -30,12 +30,12 @@ public class CurrencyExchange {
 		this.id = id;
 	}
 
-	public String getFroms() {
-		return froms;
+	public String getFrom() {
+		return from;
 	}
 
-	public void setFroms(String froms) {
-		this.froms = froms;
+	public void setFrom(String froms) {
+		this.from = froms;
 	}
 
 	public String getTo() {
@@ -64,7 +64,7 @@ public class CurrencyExchange {
 
 	@Override
 	public String toString() {
-		return "CurrencyExchange [id=" + id + ", froms=" + froms + ", to=" + to + ", conversionMultiple="
+		return "CurrencyExchange [id=" + id + ", froms=" + from + ", to=" + to + ", conversionMultiple="
 				+ conversionMultiple + ", environment=" + environment + "]";
 	}
 

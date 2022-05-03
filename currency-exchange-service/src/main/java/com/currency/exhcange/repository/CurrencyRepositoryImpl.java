@@ -8,10 +8,10 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.currency.exhcange.CurrencyExchangeMapper;
 import com.currency.exhcange.exception.CurrencyExchangeNotFoundException;
 import com.currency.exhcange.model.CurrencyExchange;
 import com.currency.exhcange.queries.CurrencyExchangeQueries;
+import com.currency.exhcange.rowmapper.CurrencyExchangeMapper;
 
 @Service
 public class CurrencyRepositoryImpl implements CurrencyRepository {
@@ -21,7 +21,7 @@ public class CurrencyRepositoryImpl implements CurrencyRepository {
 
 	public int save(CurrencyExchange currencyExchange) {
 		Map<String,Object> map=new HashMap<String,Object>();  
-		map.put("from", currencyExchange.getFroms());
+		map.put("from", currencyExchange.getFrom());
 		map.put("to",currencyExchange.getTo());  
 		map.put("conversionMultiple",currencyExchange.getConversionMultiple());  
 		return template.update(CurrencyExchangeQueries.SAVE_CURRENCY_DATA, map);

@@ -1,4 +1,4 @@
-package com.currency.exhcange;
+package com.currency.exhcange.rowmapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ public class CurrencyExchangeMapper implements RowMapper<CurrencyExchange> {
 	public CurrencyExchange mapRow(ResultSet rs, int rowNum) throws SQLException {
 		CurrencyExchange currencyExchange = new CurrencyExchange();
 		currencyExchange.setId(rs.getLong("id"));
-		currencyExchange.setFroms(rs.getString("froms"));
+		currencyExchange.setFrom(rs.getString("froms"));
 		currencyExchange.setTo(rs.getString("tos"));
 		currencyExchange.setConversionMultiple(rs.getBigDecimal("conversionmultiple"));
 		return currencyExchange;
